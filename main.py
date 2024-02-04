@@ -24,6 +24,11 @@ authenticator = stauth.Authenticate(
     config['cookie']['expiry_days'],
     config['preauthorized']
 )
+
+def logout():
+    st.session_state.clear()
+    st.experimental_rerun()
+
 name,authentication_status,username = authenticator.login("main")
 if authentication_status == False:
     st.error("username/password entered is wrong")
@@ -59,7 +64,7 @@ if authentication_status:
 
 
     with st.sidebar:
-        authenticator.logout("Logout","sidebar")
+        authenticator.logout("Logout","sidebar",on_click=logout)
         st.title("Quill Bot")
         subject_choice = st.selectbox(label="Subject", options=subject_paths.keys(), placeholder="Subject")
         marks_choice = st.selectbox(label="Marks", options=marks_relevance.keys())
