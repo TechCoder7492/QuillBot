@@ -26,7 +26,8 @@ authenticator = stauth.Authenticate(
 )
 
 def logout():
-    authenticator.logout("logout")
+    authenticator.logout("logout","sidebar")
+    st.experimental_rerun()
 
 name,authentication_status,username = authenticator.login("main")
 if authentication_status == False:
