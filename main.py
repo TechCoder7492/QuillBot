@@ -9,9 +9,9 @@ from pathlib import Path
 import yaml
 from yaml.loader import SafeLoader
 
-# __import__('pysqlite3')
-# import sys
-# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 #---- user authentication -------
 hashed_passwords = stauth.Hasher(['au1234', 'au12345']).generate()
