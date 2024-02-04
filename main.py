@@ -8,7 +8,6 @@ import pickle
 from pathlib import Path
 import yaml
 from yaml.loader import SafeLoader
-import pysqlite3
 
 __import__('pysqlite3')
 import sys
