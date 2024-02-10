@@ -1,4 +1,5 @@
 import streamlit as st
+import webbrowser
 from openai import OpenAI
 import langchain
 from langchain_community.vectorstores import Chroma
