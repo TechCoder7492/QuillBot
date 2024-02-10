@@ -67,7 +67,7 @@ if authentication_status:
         st.title("Quill Bot")
         subject_choice = st.selectbox(label="Subject", options=subject_paths.keys(), placeholder="Subject")
         marks_choice = st.selectbox(label="Marks", options=marks_relevance.keys())
-        feedback_button = st.button("Submit Feedback",on_click=feedback_button)
+        st.button("Submit Feedback",on_click=feedback_button)
     def feedback_button():
         google_forms_url = "https://forms.gle/Vx9X4jUhek2wdYwA9"
         webbrowser.open_new_tab(google_forms_url)
