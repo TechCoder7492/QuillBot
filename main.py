@@ -28,8 +28,8 @@ authenticator = stauth.Authenticate(
 def logout():
     authenticator._implement_logout()
 def feedback_button():
-        google_forms_url = "https://forms.gle/Vx9X4jUhek2wdYwA9"
-        webbrowser.open_new_tab(google_forms_url)
+    google_forms_url = "https://forms.gle/Vx9X4jUhek2wdYwA9"
+    webbrowser.open_new_tab(google_forms_url)
 
 name,authentication_status,username = authenticator.login("main")
 if authentication_status == False:
