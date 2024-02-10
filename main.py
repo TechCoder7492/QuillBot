@@ -27,6 +27,9 @@ authenticator = stauth.Authenticate(
 
 def logout():
     authenticator._implement_logout()
+def feedback_button():
+        google_forms_url = "https://forms.gle/Vx9X4jUhek2wdYwA9"
+        webbrowser.open_new_tab(google_forms_url)
 
 name,authentication_status,username = authenticator.login("main")
 if authentication_status == False:
@@ -68,9 +71,7 @@ if authentication_status:
         subject_choice = st.selectbox(label="Subject", options=subject_paths.keys(), placeholder="Subject")
         marks_choice = st.selectbox(label="Marks", options=marks_relevance.keys())
         st.button("Submit Feedback",on_click=feedback_button)
-    def feedback_button():
-        google_forms_url = "https://forms.gle/Vx9X4jUhek2wdYwA9"
-        webbrowser.open_new_tab(google_forms_url)
+
 
      # Using st.form to create a form
     with st.form(key='question_form'):
